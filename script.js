@@ -26,11 +26,12 @@ async function fetchWeather(city) {
     const data = await response.json();
 
     weatherResult.innerHTML = `
-      <h3>${data.name}</h3>
-      <p>Temperature: ${data.main.temp} °C</p>
-      <p>Condition: ${data.weather[0].description}</p>
-    `;
-
+  <h3>${data.name}</h3>
+  <p>Temperature: ${data.main.temp} °C</p>
+  <p>Condition: ${data.weather[0].description}</p>
+  <p>Humidity: ${data.main.humidity}%</p>
+  <p>Wind Speed: ${data.wind.speed} m/s</p>
+`;
     saveToLocalStorage(city);
 
   } catch (error) {
